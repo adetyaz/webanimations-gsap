@@ -1,0 +1,169 @@
+body {
+  background-image: url("https://images.pexels.com/photos/9176046/pexels-photo-9176046.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Courier New", Courier, monospace;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.055);
+  border-radius: 5rem;
+  width: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s;
+  user-select: none;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 600;
+  user-select: none;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+}
+
+.site-info {
+  position: absolute;
+  top: 50%;
+  left: 1.5em;
+  display: flex;
+  gap: 3rem;
+}
+
+.img-preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 75%;
+  overflow: hidden;
+}
+
+.img-preview img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.minimap {
+  background: darkblue;
+  position: absolute;
+  top: 20%;
+  right: 8em;
+  width: 80px;
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 2;
+  border: 1px solid #ffddd0f6;
+  box-shadow: inset 0 0 0 1px #1b0091;
+}
+
+.items {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  will-change: transform;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  body {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  .container {
+    touch-action: none;
+  }
+
+  .site-info {
+    top: 1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .minimap {
+    top: auto;
+    right: auto;
+    bottom: 5em;
+    left: 50%;
+    width: auto;
+    height: 80px;
+    touch-action: none;
+  }
+
+  .indicator {
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+  }
+
+  .items {
+    flex-direction: row;
+    width: max-content;
+    height: 100%;
+    touch-action: none;
+  }
+
+  .item {
+    width: 60px;
+    height: 100%;
+    padding: 5px;
+  }
+
+  .img-preview {
+    top: 45%;
+    width: 75%;
+    height: 50%;
+  }
+}
